@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Java-Spring-Fashion</artifactId>
+        <groupId>Phon</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>war</packaging>
+    <artifactId>Java-Spring-Fashion-Web</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>Phon</groupId>
+            <artifactId>Java-Spring-Fashion-Persistence-Data</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>Phon</groupId>
+            <artifactId>Java-Spring-Fashion-Web-Logic</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>Phon</groupId>
+            <artifactId>Java-Spring-Fashion-Code-Web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>Phon</groupId>
+            <artifactId>Java-Spring-Fashion-Service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>Phon</groupId>
+            <artifactId>Java-Spring-Fashion-DAO</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency></dependencies>
+
+</project>

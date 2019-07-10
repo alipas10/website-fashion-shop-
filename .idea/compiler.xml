@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Java-Spring-Fashion-Code-Web" />
+        <module name="Java-Spring-Fashion-DAO" />
+        <module name="Java-Spring-Fashion-Interface" />
+        <module name="Java-Spring-Fashion-Persistence-Data" />
+        <module name="Java-Spring-Fashion-Service" />
+        <module name="Java-Spring-Fashion-Utils" />
+        <module name="Java-Spring-Fashion-Web" />
+        <module name="Java-Spring-Fashion-Web-Logic" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Java-Spring-Fashion-DAOImpl" target="1.5" />
+      <module name="Java-Spring-Fashion-ServiceImpl" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

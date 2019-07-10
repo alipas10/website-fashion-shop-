@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+         http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.0.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+
+   <!--<bean name="testEntity" class="Entity.TestEntity"   >-->
+      <!--<property name="tesst2">-->
+         <!--<bean class="Entity.Test2Entity">-->
+            <!--<constructor-arg name="description" value="test"/>-->
+         <!--</bean>-->
+      <!--</property>-->
+   <!--</bean>-->
+   <!--<bean id="ResourceLoaderUtil" class="Utils.ResourceLoaderUtil" autowire="byType">-->
+   <!--</bean>-->
+   <!--<bean id="testEntity1" class="Entity.Test2Entity" >-->
+      <!--<constructor-arg name="testid" value="1"/>-->
+      <!--<constructor-arg name="testContent" value="asd"/>-->
+      <!--<constructor-arg name="description" value="dsa" />-->
+   <!--</bean>-->
+
+
+   <!--Conect by JDBC-->
+   <!--<bean id="DatabaseFashion" class="DatabaseConfig.DatabaseFashion">-->
+      <!--<property name="dataSource" ref="dataSource"/>-->
+   <!--</bean>-->
+   <!---->
+   <!---->
+
+   <!--Conect by hibernate-->
+   <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSource"/>
+      <property name="packagesToScan" value="Entity"/>
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+
+         </props>
+      </property>
+   </bean>
+   <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" >
+      <property name="basename">
+         <value>ResourcesBundle</value>
+      </property>
+   </bean>
+
+   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+      <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/Fashion?serverTimezone=UTC"/>
+      <property name="username" value="root"/>
+      <property name="password" value="root"/>
+   </bean>
+
+   <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+      <property name="sessionFactory" ref="sessionFactory"/>
+   </bean>
+
+   <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+</beans>
